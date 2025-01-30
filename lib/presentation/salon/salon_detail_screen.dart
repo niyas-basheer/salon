@@ -101,18 +101,18 @@ class _SalonDetailScreenImplState extends State<SalonDetailScreenImpl>
           ),
         ),
       ),
-      actions: [
-        Center(
-          child: ActionIconButton(
-            icon: Icons.favorite,
-            iconColor: Colors.red,
-            onPressed: () {
-              navigateBack(context);
-            },
-          ),
-        ),
-        spacing(width: 12)
-      ],
+      // actions: [
+      //   Center(
+      //     child: ActionIconButton(
+      //       icon: Icons.favorite,
+      //       iconColor: Colors.red,
+      //       onPressed: () {
+      //         navigateBack(context);
+      //       },
+      //     ),
+      //   ),
+      //   spacing(width: 12)
+      // ],
     );
   }
 
@@ -314,10 +314,19 @@ class _SalonDetailScreenImplState extends State<SalonDetailScreenImpl>
                 child: Text('${widget.data['timing']} / ${widget.data['days']}',
                     style: StyleHelper.titleSmall(context)),
               ),
+             IconButton(
+            icon: Icon(Icons.favorite_border),
+            onPressed: () {},
+          ), 
+           IconButton(
+            icon: Icon(Icons.ios_share_outlined),
+            onPressed: () {},
+          ), 
             ],
           ),
           spacing(height: 15),
-          buildActionButtons(),
+
+          // buildActionButtons(),
           spacing(height: 10),
           const Divider(),
           spacing(height: 10),
@@ -401,11 +410,24 @@ class _SalonDetailScreenImplState extends State<SalonDetailScreenImpl>
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            trans(context, key: 'about'),
-            style: titleMedium,
+          Row(
+            children: [
+              Text(
+                trans(context, key: 'about'),
+                style: titleMedium,
+              ),
+              Spacer(), 
+               IconButton(
+                icon: Icon(LucideIcons.map), 
+                onPressed: () {},
+              ), 
+              Text(
+                trans(context, key: 'View in Map'),
+                style: StyleHelper.labelSmall(context),
+              ),
+            ],
           ),
-          spacing(height: 10),
+         // spacing(height: 0 ),
           ExpandableRichText(
             '${widget.data['description']}',
             expandText: trans(context, key: 'show_more'),

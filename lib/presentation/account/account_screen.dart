@@ -24,22 +24,41 @@ class AccountScreen extends StatefulWidget {
 class _AccountScreenState extends State<AccountScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        children: [
-          spacing(height: 10),
-          const Padding(
-            padding: EdgeInsets.only(left: 15, right: 15),
-            child: SelectLanguageWidget(),
-          ),
-          spacing(height: 5),
-          _buildUserAvatarWidget(),
-          spacing(height: 30),
-          const AccountGeneralInfo(),
-          spacing(height: 20),
-          const AccountOptions(),
-          spacing(height: 20),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: ListView(
+          children: [
+            // spacing(height: 10),
+            // const Padding(
+            //   padding: EdgeInsets.only(left: 15, right: 15),
+            //   child: SelectLanguageWidget(),
+            // ),
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Text("Your Profile", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ),
+            spacing(height: 30),
+            _buildUserAvatarWidget(),
+            spacing(height: 30),
+            // const AccountGeneralInfo(),
+            // spacing(height: 20),
+            const AccountOptions(),
+            spacing(height: 150),
+            Center(child: Image.asset('assets/img/Group 329.png')),
+            spacing(height: 20),
+            Row(
+                      children: [
+                        spacing(width: 20), 
+            TextButton(onPressed: (){}, child: Text('About Us',style: TextStyle(color: Colors.grey, fontSize: 11),)),
+            spacing(width: 30), 
+            TextButton(onPressed: (){}, child: Text('Privacy Policy',style: TextStyle(color: Colors.grey, fontSize: 11))),
+            spacing(width: 30), 
+            TextButton(onPressed: (){}, child: Text('Terms & Conditions',style: TextStyle(color: Colors.grey, fontSize: 11))), 
+                      ],
+                    ),
+                    spacing(height: 20),
+          ],
+        ),
       ),
     );
   }
@@ -48,28 +67,77 @@ class _AccountScreenState extends State<AccountScreen> {
   Widget _buildUserAvatarWidget() {
     return Column(
       children: [
-        ImageWidget(
-          height: 120,
-          width: 120,
-          image: AssetsConst.avatarPlaceholder,
-          borderRadius: BorderRadius.circular(200),
-          fit: BoxFit.cover,
-          type: ImageType.asset,
+        Padding(
+          padding: const EdgeInsets.only(left: 30.0),
+          child: Row(
+            children: [
+              Stack(
+                children:[
+          ImageWidget(
+                  height: 120,
+                  width: 120,
+                  image: AssetsConst.avatarPlaceholder,
+                  borderRadius: BorderRadius.circular(200),
+                  fit: BoxFit.cover,
+                  type: ImageType.asset,
+                ),
+                Positioned(
+                              bottom: 0,
+                              right: 0,
+                              child: Container(
+                                padding: EdgeInsets.all(4),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  shape: BoxShape.circle,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black26,
+                                      blurRadius: 2,
+                                    ),
+                                  ],
+                                ),
+                                child: Icon(
+                                  Icons.camera_alt,
+                                  size: 18,
+                                  color: Colors.black54,
+                                ),
+                              ),
+                            ),
+                ] 
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 35), 
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start, 
+                   children: [
+                  
+                  const Text(
+                          'Emily Robinson',
+                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                         const Text(
+                          '+91 7306882706',
+                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        spacing(height: 10),
+                        
+                        CustomButton(
+                          title: trans(context, key: 'edit Profile'),
+                          // leftIcon: LucideIcons.edit,
+                          color: const Color.fromARGB(255, 216, 216, 216),
+                          textColor: Colors.black,
+                          iconSize: 16,
+                          onTap: () {
+                navigateToScreen(context, const EditProfileScreen());
+                          },
+                        ),
+                ],),
+              )
+            ],
+          ),
         ),
         spacing(height: 20),
-        const Text(
-          'Emily Robinson',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        spacing(height: 10),
-        CustomButton(
-          title: trans(context, key: 'edit'),
-          leftIcon: LucideIcons.edit,
-          iconSize: 16,
-          onTap: () {
-            navigateToScreen(context, const EditProfileScreen());
-          },
-        ),
+        
       ],
     );
   }

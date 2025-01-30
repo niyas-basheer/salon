@@ -173,7 +173,7 @@ import 'package:salon_app/presentation/widgets/spacing.dart';
 
 
 class OtpScreen extends StatefulWidget {
-   OtpScreen({super.key});
+   const OtpScreen({super.key});
 
   @override
   State<OtpScreen> createState() => _OtpScreenState();

@@ -5,7 +5,6 @@ import 'package:salon_app/core/bloc/theme_bloc/theme_bloc.dart';
 import 'package:salon_app/core/themes/colors.dart';
 import 'package:salon_app/core/constants/font_const.dart';
 import 'package:salon_app/presentation/account/account_screen.dart';
-import 'package:salon_app/presentation/chats/chats_screen.dart';
 import 'package:salon_app/presentation/explore/explore_page.dart';
 import 'package:salon_app/presentation/home/home_page.dart';
 import 'package:salon_app/presentation/my_bookings/my_bookings_screen.dart';

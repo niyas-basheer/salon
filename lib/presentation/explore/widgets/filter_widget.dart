@@ -1,11 +1,9 @@
-import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:salon_app/core/utils/global_methods.dart';
 import 'package:salon_app/core/utils/navigator.dart';
 import 'package:salon_app/core/utils/styles.dart';
 import 'package:salon_app/data/amenities_data.dart';
-import 'package:salon_app/data/services_list_data.dart';
 import 'package:salon_app/presentation/widgets/custom_button.dart';
 import 'package:salon_app/presentation/widgets/spacing.dart';
 

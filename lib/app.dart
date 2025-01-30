@@ -5,7 +5,7 @@ import 'package:salon_app/core/bloc/language_bloc/language_bloc.dart';
 import 'package:salon_app/core/bloc/theme_bloc/theme_bloc.dart';
 import 'package:salon_app/core/localization/app_localization_setup.dart';
 import 'package:salon_app/presentation/auth/login_screen.dart';
-import 'package:salon_app/presentation/splash_screen.dart';
+import 'package:salon_app/presentation/home/widgets/home_toggle_bar.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -36,7 +36,8 @@ class App extends StatelessWidget {
                     child: child!,
                   );
                 },
-                home: const LoginPage(),
+                
+                 home: const LoginPage(),
               );
             },
           );

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:salon_app/core/utils/global_methods.dart';
-import 'package:salon_app/presentation/explore/widgets/filter_widget.dart';
 import 'package:salon_app/presentation/widgets/spacing.dart';
 
 /// HomeSearchbar displays a search bar with a filter icon for the home screen.

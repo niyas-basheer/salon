@@ -8,9 +8,9 @@ import 'package:salon_app/presentation/widgets/image_widget.dart';
 import 'package:salon_app/presentation/widgets/spacing.dart';
 
 /// TopSpecialist displays a list of top specialists.
-class TopSpecialist extends StatelessWidget {
+class TopSpecialistAtHome extends StatelessWidget {
   /// Constructor for the TopSpecialist widget.
-  const TopSpecialist({super.key});
+  const TopSpecialistAtHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +19,6 @@ class TopSpecialist extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Text(
-              trans(context, key: 'Specialists'),
-              style: StyleHelper.titleMedium(context)
-                  ?.copyWith(fontWeight: FontWeight.w600),
-            ),
-          ),
-          spacing(height: 15),
           _buildListWidget(context, SpecialListData.list),
         ],
       ),

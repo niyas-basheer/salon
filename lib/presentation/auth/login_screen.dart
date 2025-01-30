@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:salon_app/presentation/auth/otp_screen.dart';
-import 'package:salon_app/presentation/widgets/spacing.dart';
 
 
 class LoginPage extends StatelessWidget {

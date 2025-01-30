@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:salon_app/core/utils/global_methods.dart';
 import 'package:salon_app/data/onboarding_data.dart';

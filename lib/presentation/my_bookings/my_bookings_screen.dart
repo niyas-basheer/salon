@@ -4,6 +4,7 @@ import 'package:salon_app/core/constants/booking_status_const.dart';
 import 'package:salon_app/core/utils/global_methods.dart';
 import 'package:salon_app/core/utils/styles.dart';
 import 'package:salon_app/data/bookings_data.dart';
+import 'package:salon_app/presentation/explore/widgets/saurch_screen.dart';
 import 'package:salon_app/presentation/my_bookings/widgets/bookings_list_widget.dart';
 import 'package:salon_app/presentation/widgets/spacing.dart';
 
@@ -37,7 +38,12 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
       actions: [
         IconButton(
           icon: const Icon(LucideIcons.search),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchPage()),
+                );  
+          },
         ),
         spacing(width: 12),
       ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:salon_app/core/constants/assets_const.dart';
 import 'package:salon_app/core/constants/image_type_const.dart';
 import 'package:salon_app/core/themes/colors.dart';
@@ -7,7 +6,6 @@ import 'package:salon_app/core/utils/global_methods.dart';
 import 'package:salon_app/core/utils/navigator.dart';
 import 'package:salon_app/core/utils/styles.dart';
 import 'package:salon_app/presentation/salon/salon_detail_screen.dart';
-import 'package:salon_app/presentation/widgets/action_icon_button.dart';
 import 'package:salon_app/presentation/widgets/image_widget.dart';
 import 'package:salon_app/presentation/widgets/spacing.dart';
 

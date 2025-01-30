@@ -55,12 +55,12 @@ class CustomButton extends StatelessWidget {
           : null,
       style: ButtonStyle(
         elevation:
-            MaterialStateProperty.resolveWith((states) => elevation ?? 0),
+            WidgetStateProperty.resolveWith((states) => elevation ?? 0),
         backgroundColor: getBtnBackground(context),
-        padding: MaterialStateProperty.resolveWith((states) =>
+        padding: WidgetStateProperty.resolveWith((states) =>
             EdgeInsets.symmetric(
                 horizontal: xPadding ?? 20, vertical: yPadding ?? 0)),
-        shape: MaterialStateProperty.resolveWith(
+        shape: WidgetStateProperty.resolveWith(
           (states) => RoundedRectangleBorder(
             side: BorderSide(
               color: lined == true
@@ -111,8 +111,8 @@ class CustomButton extends StatelessWidget {
     );
   }
 
-  MaterialStateProperty<Color> getBtnBackground(BuildContext context) {
-    return MaterialStateProperty.resolveWith(
+  WidgetStateProperty<Color> getBtnBackground(BuildContext context) {
+    return WidgetStateProperty.resolveWith(
       (states) => loading
           ? AppColors.grey40
           : enable

@@ -38,9 +38,24 @@ class BookingCard extends StatelessWidget {
             const Divider(height: 1),
             spacing(height: 12),
             _buildSalonInfo(context),
+            spacing(height: 12),
+            const Divider(height: 1),
             if (type != BookingStatusConst.cancelled) ...[
               spacing(height: 12),
               _buildActionButtons(context),
+               if (type == BookingStatusConst.completed) ...[
+          spacing(height: 10),
+          TextFormField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                hintText: '    Write Reviw',
+
+              ),
+          )
+          
+        ], 
             ]
           ],
         ),
@@ -54,12 +69,24 @@ class BookingCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         spacing(height: 5),
-        Text(
-          '${formatDateTime(date: data['booking_date'])} - ${data['booking_time']}',
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          style: StyleHelper.titleMedium(context)
-              ?.copyWith(fontWeight: FontWeight.w700),
+        Row(
+          children: [
+            Text(
+              formatDateTime(date: data['booking_date']),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: StyleHelper.titleMedium(context)
+                  ?.copyWith(fontWeight: FontWeight.w700),
+            ),
+            Spacer(), 
+             Text( 
+              '${data['booking_time']}',
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: StyleHelper.titleMedium(context)
+                  ?.copyWith(fontWeight: FontWeight.w700),
+            ),
+          ],
         ),
         spacing(height: 12),
       ],
@@ -121,13 +148,29 @@ class BookingCard extends StatelessWidget {
           ),
           spacing(width: 10),
         ],
+       
         Expanded(
           child: CustomButton(
             title: trans(context, key: 'view_e_receipt'),
+            color: type == BookingStatusConst.completed?Colors.transparent:Theme.of(context).primaryColor, 
+            lined: type ==BookingStatusConst.completed? true:false,
+            textColor: type == BookingStatusConst.completed?Colors.grey:Colors.white, 
             onTap: () {},
           ),
-        ),
+         ),
+
+         if (type == BookingStatusConst.completed) ...[
+          spacing(width: 10),
+          Expanded(
+            child: CustomButton( 
+              title: trans(context, key: 'Rebook'),
+              onTap: () {},
+            ),
+          ),
+          
+        ],
       ],
     );
+    
   }
 }
