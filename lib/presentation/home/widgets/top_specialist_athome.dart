@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salon_app/core/constants/image_type_const.dart';
 import 'package:salon_app/core/themes/colors.dart';
-import 'package:salon_app/core/utils/global_methods.dart';
-import 'package:salon_app/core/utils/styles.dart';
 import 'package:salon_app/data/specialist_list_data.dart';
 import 'package:salon_app/presentation/widgets/image_widget.dart';
 import 'package:salon_app/presentation/widgets/spacing.dart';

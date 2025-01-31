@@ -128,7 +128,6 @@
 //   }
 // }
 import 'package:flutter/material.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:salon_app/core/constants/assets_const.dart';
 import 'package:salon_app/core/constants/image_type_const.dart';
 import 'package:salon_app/core/themes/colors.dart';

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:salon_app/core/constants/assets_const.dart';
 import 'package:salon_app/core/constants/image_type_const.dart';
 import 'package:salon_app/core/utils/global_methods.dart';
 import 'package:salon_app/core/utils/navigator.dart';
 import 'package:salon_app/presentation/account/screens/edit_profile_screen.dart';
-import 'package:salon_app/presentation/account/widgets/account_general_info.dart';
 import 'package:salon_app/presentation/account/widgets/account_options.dart';
-import 'package:salon_app/presentation/account/widgets/select_language_widget.dart';
 import 'package:salon_app/presentation/widgets/custom_button.dart';
 import 'package:salon_app/presentation/widgets/image_widget.dart';
 import 'package:salon_app/presentation/widgets/spacing.dart';

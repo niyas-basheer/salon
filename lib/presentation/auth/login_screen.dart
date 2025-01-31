@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:salon_app/core/utils/global_methods.dart';
+import 'package:salon_app/core/utils/navigator.dart';
 import 'package:salon_app/presentation/auth/otp_screen.dart';
+import 'package:salon_app/presentation/widgets/custom_button.dart';
 
 
 class LoginPage extends StatelessWidget {
@@ -89,31 +92,21 @@ class LoginPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   // Login Icon/Button
-                  Container(
-                    width: 200,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.circular(10),
-                      ), 
-                    child: ElevatedButton(
-                      
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.amber,elevation: 0),
-                      onPressed: () { 
-                         Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => OtpScreen()),
-                                    );
-                      },
-                      
-                      child: Center(
-                        child: Text("Get Started", style: TextStyle(
-                          fontSize: 20,
-                          fontWeight:FontWeight.w400, 
-                          color: Colors.white,
-                        ),),
-                      ),
-                    ),
+                  SizedBox(
+                    width: 200, 
+                    child: CustomButton(
+                                      title: trans(context, key: 'Get Started'),
+                                      elevation: 0,
+                                      yPadding: 15,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                      onTap: () {
+                    navigateToScreen(
+                      context,
+                      OtpScreen()
+                    ); 
+                                      },
+                                    ),
                   ),
                 ],
               ),

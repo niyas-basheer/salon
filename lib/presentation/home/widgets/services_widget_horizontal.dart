@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:salon_app/core/constants/image_type_const.dart';
 import 'package:salon_app/core/themes/colors.dart';
+import 'package:salon_app/core/utils/navigator.dart';
 import 'package:salon_app/core/utils/styles.dart';
 import 'package:salon_app/data/services_list_data.dart';
+import 'package:salon_app/presentation/home/services.dart';
 import 'package:salon_app/presentation/widgets/image_widget.dart';
 import 'package:salon_app/presentation/widgets/spacing.dart';
 
@@ -29,7 +31,7 @@ class ServicesWidgetHorizontal extends StatelessWidget {
                 final service = ServiceListData.list[index];
                 return GestureDetector(
                   onTap: () {
-                    // Implement action when a service item is tapped
+                     navigateToScreen(context, ServicesScreen(text:service['title'] ,)); 
                   },
                   behavior: HitTestBehavior.opaque,
                   child: ServiceListItem(

@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:salon_app/presentation/home/__my_widget_state.dart';
-import 'package:salon_app/presentation/home/home_page.dart';
 
 class filter extends StatefulWidget {
   final String text;

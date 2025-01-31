@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:salon_app/core/constants/image_type_const.dart';
-import 'package:salon_app/core/utils/navigator.dart';
 import 'package:salon_app/data/salon_gallery_data.dart';
-import 'package:salon_app/presentation/common/gallery_view.dart';
 import 'package:salon_app/presentation/explore/explore_page.dart';
-import 'package:salon_app/presentation/widgets/image_widget.dart';
 
 /// Widget to display a grid of salon images.
 class SalonGallery extends StatelessWidget {
@@ -89,15 +85,5 @@ SizedBox(
                 },
               ),
 );
-  }
-  /// Builds a single item in the gallery grid.
-  Widget _buildGalleryItem(Map<String, dynamic> item) {
-    return ImageWidget(
-      image: item['image'],
-      height: 100,
-      width: 120,
-      type: ImageType.asset,
-      fit: BoxFit.cover,
-    );
   }
 }

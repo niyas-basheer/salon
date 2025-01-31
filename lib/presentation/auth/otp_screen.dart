@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:salon_app/core/themes/colors.dart';
 import 'package:salon_app/core/utils/global_methods.dart';
+import 'package:salon_app/core/utils/navigator.dart';
 import 'package:salon_app/core/utils/styles.dart';
 import 'package:salon_app/presentation/dashboard.dart';
-import 'package:salon_app/presentation/home/home_page.dart';
 import 'package:salon_app/presentation/widgets/custom_button.dart';
 import 'package:salon_app/presentation/widgets/spacing.dart';
 
@@ -287,32 +287,22 @@ class _OtpScreenState extends State<OtpScreen> {
             ),
                    otpResendWidget(),
                    const SizedBox(height: 5),
-                  Container(
-                    width: 150,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10), color: Colors.amber
-                        ),
-                    child: ElevatedButton(
-                      onPressed: () {
-                         
-                          Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => Dashboard()),
-                                    );
-                      },
-                      style:ElevatedButton.styleFrom(
-                        backgroundColor: Colors.amber, fixedSize: Size.fromWidth(150)
-                        ,elevation: 0 
-                      ),
-                      child: Center(
-                        child: Text("Verify", style: TextStyle(
-                          fontSize: 20,
-                          fontWeight:FontWeight.w400, 
-                          color: Colors.white,
-                        ),),
-                      ),
-                    ),
+                 
+                  SizedBox(
+                    width: 200, 
+                    child: CustomButton(
+                                      title: trans(context, key: 'Verify'),
+                                      elevation: 0,
+                                      yPadding: 15,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                      onTap: () {
+                    navigateToScreen(
+                      context,
+                      Dashboard()
+                    ); 
+                                      },
+                                    ),
                   ),
                 ],
               ),
